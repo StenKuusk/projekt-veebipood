@@ -1,10 +1,17 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 
+// Define the directory where your static files are located
+app.use(express.static('public'));
+
+// Define the route for the homepage
 app.get('/', (req, res) => {
-    res.send('express test')
-})
+    // Render the homepage.html file
+    res.sendFile(__dirname + '/public/homepage.html');
+});
 
-app.listen(3020, () => {
-    console.log('server is running')
-})
+// Start the server
+const PORT = 3020;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
