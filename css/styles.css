@@ -59,3 +59,50 @@ footer {
     text-align: center;
     padding: 20px 0;
 }
+
+/* Style for product container */
+.product {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #9b6d6d;
+}
+
+/* Style for product image */
+.product img {
+    width: 150px;
+    height: 100px;
+}
+
+
+/* Style for product title */
+.product h3 {
+    margin-top: 0;
+}
+
+/* Style for product description */
+.product p {
+    margin-bottom: 10px;
+}
+
+/* Style for product price */
+.product p.price {
+    font-weight: bold;
+    color: #333; /* Adjust the color of the price */
+}
+
+/* Style for add to cart button */
+.product button {
+    padding: 10px 20px;
+    background-color: #34495e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product button:hover {
+    background-color: #2c3e50;
+}
