@@ -49,7 +49,6 @@ section {
     padding: 20px;
     text-align: center;
 }
-
 section h2 {
     margin-bottom: 20px;
 }
@@ -195,4 +194,16 @@ div p {
      1px -1px 0 black,
     -1px  1px 0 black,
      1px  1px 0 black;
+}
+
+.submit {
+    margin-top: 10px;
+}
+
+.message {
+    padding: 184px;
+}
+
+.message form {
+    margin-top: 10px;
 }

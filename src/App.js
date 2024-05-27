@@ -7,6 +7,7 @@ import ContactPage from './components/contact';
 import ShopPage from './components/shop';
 import PurchasePage from './components/purchase';
 import SuccessPage from './components/success';
+import ContactedPage from './components/contacted';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/shop" element={<ShopPage />} />
           <Route path="/purchase" element={<PurchasePage />} />
           <Route path="/success" element={<SuccessPage />} />
+          <Route path="/contacted" element={<ContactedPage />} />
         </Routes>
       </div>
     </Router>

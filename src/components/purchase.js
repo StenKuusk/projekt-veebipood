@@ -23,7 +23,7 @@ function PurchasePage() {
           <input type="text" id="expiry-date" name="expiry-date" required />
           <label htmlFor="cvv">CVV:</label>
           <input type="text" id="cvv" name="cvv" required />
-          <button type="submit">Purchase</button>
+          <button  class="submit" type="submit">Purchase</button>
         </form>
       </section>
 

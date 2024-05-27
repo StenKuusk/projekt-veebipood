@@ -1,8 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../App.css';
 
 function ContactPage() {
+  const navigate = useNavigate();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    navigate('/contacted');
+  }
+
   return (
     <div>
       <header>
@@ -17,7 +24,7 @@ function ContactPage() {
       <section className="contact-section">
         <h2>Get in Touch</h2>
         <p>If you have any questions or feedback, feel free to reach out to us!</p>
-        <form action="#">
+        <form onSubmit={handleSubmit}>
           <label htmlFor="name">Name:</label>
           <input type="text" id="name" name="name" required />
           <label htmlFor="email">Email:</label>
