@@ -1,0 +1,15 @@
+.cart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    overflow: auto;
+    background-color: #f8f8f8;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-list {
+    padding-right: 220px;
+  }

@@ -9,6 +9,9 @@ import PurchasePage from './components/purchase';
 import SuccessPage from './components/success';
 import ContactedPage from './components/contacted';
 
+
+
+
 function App() {
   return (
     <Router>

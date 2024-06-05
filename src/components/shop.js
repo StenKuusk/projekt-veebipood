@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
+import './shop.css';
 
 function ShopPage() {
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (product) => {
+    setCart(currentCart => [...currentCart, product]);
+  };
+
+  const removeFromCart = (product) => {
+    setCart(currentCart => currentCart.filter(item => item !== product));
+  };
+
   return (
     <div>
       <header>
@@ -21,7 +32,7 @@ function ShopPage() {
           <img src="/coffee1.jpg" alt="Coffee 1" width="200" height="200" />
           <p>Our first handcrafted and brewed coffee beans.</p>
           <p>$9.99</p>
-          <button>Add to Cart</button>
+          <button onClick={() => addToCart('Classic')}>Add to Cart</button>
         </div>
         <div className="product">
           <h3>Quality</h3>
@@ -29,9 +40,18 @@ function ShopPage() {
           <p>Later down the line, we came up with the most quality rich coffee beans.</p>
           <p>Each brew of this, holds very rich and satisfying taste, which keeps you satisfied.</p>
           <p>$12.99</p>
-          <button>Add to Cart</button>
+          <button onClick={() => addToCart('Quality')}>Add to Cart</button>
         </div>
-        {/* Add more products here */}
+      </section>
+
+      <section className="cart">
+        <h2>Your Cart</h2>
+        {cart.map((item, index) => (
+          <div key={index}>
+            <p>{item}</p>
+            <button onClick={() => removeFromCart(item)}>Remove from Cart</button>
+          </div>
+        ))}
       </section>
 
       <footer>
