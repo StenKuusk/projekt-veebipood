@@ -43,7 +43,8 @@ Contact.init({
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
 
-router.post('/contact', async (req, res) => {
+router.post('/api/contact', async (req, res) => {
+  console.log('Received contact form submission:', req.body);  // Log incoming request body
   try {
     const { name, email, message } = req.body;
     if (!name || !email || !message) {

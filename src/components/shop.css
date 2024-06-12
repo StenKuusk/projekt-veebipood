@@ -13,3 +13,22 @@
   .product-list {
     padding-right: 220px;
   }
+
+  .purchase-button {
+    padding: 10px 20px;
+    background-color: #993f0b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 30px;
+}
+
+  .purchase-button:hover {
+    background-color: #c2500e;
+}
