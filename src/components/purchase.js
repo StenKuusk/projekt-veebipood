@@ -1,9 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import '../App.css';
 import './purchase.css';
 
 function PurchasePage() {
+  const location = useLocation();
+  const totalPrice = location.state ? location.state.totalPrice : 0;
+
   return (
     <div>
       <header>
@@ -17,6 +20,7 @@ function PurchasePage() {
 
       <section className="purchase-section">
         <h2>Enter Payment Details</h2>
+        <h3>Total Price: ${totalPrice.toFixed(2)}</h3>
         <form action="/success">
           <label htmlFor="card-number">Card Number:</label>
           <input type="text" id="card-number" name="card-number" required />
@@ -24,7 +28,7 @@ function PurchasePage() {
           <input type="text" id="expiry-date" name="expiry-date" required />
           <label htmlFor="cvv">CVV:</label>
           <input type="text" id="cvv" name="cvv" required />
-          <button  class="submit" type="submit">Purchase</button>
+          <button className="submit" type="submit">Purchase</button>
         </form>
       </section>
 

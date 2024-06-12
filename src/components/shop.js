@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../App.css';
 import './shop.css';
 
@@ -7,6 +7,7 @@ function ShopPage() {
   const [cart, setCart] = useState([]);
   const prices = { 'Classic': 9.99, 'Quality': 12.99 };
   const totalPrice = cart.reduce((total, item) => total + prices[item], 0);
+  const navigate = useNavigate();
 
   const addToCart = (product) => {
     setCart(currentCart => [...currentCart, product]);
