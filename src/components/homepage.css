@@ -35,6 +35,11 @@ nav a {
     background-color: #993f0b;
     transition: background-color 0.3s ease;
 } 
+
+nav a:hover {
+    background-color: chocolate;
+}
+
 .hero-text {
     text-align: center;
     position: absolute;
