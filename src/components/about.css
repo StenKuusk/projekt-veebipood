@@ -1,0 +1,15 @@
+.about-section {
+    padding: 180px;
+    text-align: center;
+    background-image: url('/public/coffee_background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.about-section p {
+    color: whitesmoke;
+}
+
+.about-section h2 {
+    color: whitesmoke;
+}

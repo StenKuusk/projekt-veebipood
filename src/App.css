@@ -1,48 +1,3 @@
-/* Reset styles */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-/* Body styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-}
-
-/* Header styles */
-header {
-    background-color: #5f2300;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-}
-
-/* Header h1 styles */
-header h1 {
-    margin: 0;
-}
-
-/* Navigation styles */
-nav {
-    text-align: center;
-    margin-top: 20px;
-}
-
-nav a {
-    text-decoration: none;
-    color: white;
-    padding: 10px 20px;
-    margin: 0 10px;
-    border-radius: 5px;
-    background-color: #993f0b;
-    transition: background-color 0.3s ease;
-}
-
-nav a:hover {
-    background-color: #c2500e;
-}
 
 /* Main section styles */
 section {
@@ -53,101 +8,6 @@ section h2 {
     margin-bottom: 20px;
 }
 
-.about-section {
-    padding: 155px;
-    text-align: center;
-    background-image: url('/public/coffee_background.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.about-section p {
-    color: whitesmoke;
-}
-
-.about-section h2 {
-    color: whitesmoke;
-}
-
-.contact-section {
-    padding: 154px;
-}
-
-.contact-section h2 {
-    margin-bottom: 20px;
-}
-
-.contact-section p {
-    margin-bottom: 25px;
-}
-
-/* Hero image styles */
-.hero-image {
-    background-image: url('/public/coffee1.jpg');
-    background-size: cover;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.hero-text {
-    color: white;
-}
-
-/* Footer styles */
-footer {
-    background-color: #5f2300;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    position: relative; /* Ensure positioning context for absolute positioning */
-}
-
-footer p {
-    margin-top: 50px; /* Add top margin to create space */
-}
-
-/* Buy now button styles */
-.buy-now-button {
-    padding: 10px 20px;
-    background-color: #993f0b;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    position: absolute; /* Position absolutely within the footer */
-    bottom: 20px; /* Adjust the distance from the bottom */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Center horizontally */
-    margin-bottom: 30px;
-}
-
-.buy-now-button:hover {
-    background-color: #c2500e;
-}
-
-/* Proceed to purchase style */
-.purchase-button {
-    padding: 10px 20px;
-    background-color: #993f0b;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    position: absolute; /* Position absolutely within the footer */
-    bottom: 20px; /* Adjust the distance from the bottom */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Center horizontally */
-    margin-bottom: 30px;
-}
-
-.purchase-button:hover {
-    background-color: #c2500e;
-}
 
 /* Div styles */
 div h2 {
@@ -162,39 +22,6 @@ div p {
     margin-top: 20px;
 }
 
-.purchase-section {
-    padding: 200px;
-}
-
-.purchase-section h2 {
-    margin-bottom: 80px;
-    margin-top: -50px;
-}
-
-.success-section {
-    padding: 300px;
-    background-image: url('/public/heart.webp');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.success-section h2 {
-    color: whitesmoke;
-    text-shadow: 
-    -1px -1px 0 black,  
-     1px -1px 0 black,
-    -1px  1px 0 black,
-     1px  1px 0 black;
-}
-
-.success-section p {
-    color: whitesmoke;
-    text-shadow: 
-    -1px -1px 0 black,  
-     1px -1px 0 black,
-    -1px  1px 0 black,
-     1px  1px 0 black;
-}
 
 .submit {
     margin-top: 10px;
@@ -206,4 +33,30 @@ div p {
 
 .message form {
     margin-top: 10px;
+}
+
+footer {
+    background-color: #5f2300;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-top: 1px solid #fff;
+}
+
+footer p {
+    margin-top: 50px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ddd;
+    text-decoration: underline;
 }
