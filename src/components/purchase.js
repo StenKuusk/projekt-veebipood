@@ -1,6 +1,10 @@
 import React from 'react';
+<<<<<<< HEAD
 import { Link, useLocation } from 'react-router-dom';
 import '../App.css';
+=======
+import { Link } from 'react-router-dom';
+>>>>>>> fa665e28b6c99f043fe88dcc9d374cbe40ec2d8e
 import './purchase.css';
 
 function PurchasePage() {
