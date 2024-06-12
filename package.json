@@ -2,13 +2,16 @@
   "name": "projekt-veebipood",
   "version": "1.0.0",
   "description": "Veebipood kus kliendid saavad shopata.",
-  "main": "index.js",
+  "main": "Express.js",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"npm run start-client\" \"npm run start-server\"",
+    "start-client": "react-scripts start",
+    "start-server": "node Express.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "axios": "^1.7.2",
+    "concurrently": "^8.2.2",
     "cors": "^2.8.5",
     "debug": "^4.3.5",
     "express": "^4.19.2",

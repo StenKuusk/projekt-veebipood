@@ -23,7 +23,7 @@ function ContactPage() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('/contact', formData);
+      const response = await axios.post('http://localhost:3001/contact', formData);
       console.log('Message sent:', response.data);
       navigate('/contacted');
     } catch (error) {
