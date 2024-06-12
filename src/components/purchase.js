@@ -1,11 +1,39 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import '../App.css';
 import './purchase.css';
 
 function PurchasePage() {
   const location = useLocation();
+  const navigate = useNavigate();
   const totalPrice = location.state ? location.state.totalPrice : 0;
+
+  const [formData, setFormData] = useState({
+    cardNumber: '',
+    expiryDate: '',
+    cvv: '',
+    totalPrice: totalPrice
+  });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:3001/purchase', formData);
+      console.log('Purchase made:', response.data);
+      navigate('/success');
+    } catch (error) {
+      console.error('Error making purchase:', error);
+    }
+  };
 
   return (
     <div>
@@ -17,21 +45,19 @@ function PurchasePage() {
           <Link to="/contact">Contact</Link>
         </nav>
       </header>
-
       <section className="purchase-section">
         <h2>Enter Payment Details</h2>
         <h3>Total Price: ${totalPrice.toFixed(2)}</h3>
-        <form action="/success">
-          <label htmlFor="card-number">Card Number:</label>
-          <input type="text" id="card-number" name="card-number" required />
-          <label htmlFor="expiry-date">Expiry Date:</label>
-          <input type="text" id="expiry-date" name="expiry-date" required />
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="cardNumber">Card Number:</label>
+          <input type="text" id="cardNumber" name="cardNumber" value={formData.cardNumber} onChange={handleChange} required />
+          <label htmlFor="expiryDate">Expiry Date:</label>
+          <input type="text" id="expiryDate" name="expiryDate" value={formData.expiryDate} onChange={handleChange} required />
           <label htmlFor="cvv">CVV:</label>
-          <input type="text" id="cvv" name="cvv" required />
-          <button className="submit" type="submit">Purchase</button>
+          <input type="text" id="cvv" name="cvv" value={formData.cvv} onChange={handleChange} required />
+          <button type="submit">Purchase</button>
         </form>
       </section>
-
       <footer>
         <p>&copy; 2024 My Coffee Shop. All rights reserved.</p>
       </footer>
