@@ -78,7 +78,6 @@ nav a {
 }
 
 .hero-image {
-    background-image: url('/public/coffee1.jpg');
     background-size: cover;
     height: 400px;
     display: flex;
