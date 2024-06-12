@@ -50,9 +50,9 @@ function ShopPage() {
       <section className="cart">
         <h2>Your Cart</h2>
         {cart.map((item, index) => (
-        <div key={index}>
-          <p>{item}</p>
-          <button onClick={() => removeFromCart(item)}>Remove from Cart</button>
+          <div key={index}>
+            <p>{item}</p>
+            <button onClick={() => removeFromCart(item)}>Remove from Cart</button>
           </div>
         ))}
         <h2>Total Price: ${totalPrice.toFixed(2)}</h2>
@@ -60,7 +60,7 @@ function ShopPage() {
 
       <footer>
         <p>&copy; 2024 My Coffee Shop. All rights reserved.</p>
-        <Link to={{ pathname: "/purchase", state: { totalPrice } }} className="purchase-button">Proceed to Purchase</Link>
+        <Link to="/purchase" state={{ totalPrice }} className="purchase-button">Proceed to Purchase</Link>
       </footer>
     </div>
   );
