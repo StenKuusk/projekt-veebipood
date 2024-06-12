@@ -13,3 +13,8 @@
 .about-section h2 {
     color: whitesmoke;
 }
+
+.about-section, footer {
+    margin: 0;
+    border: none;
+}

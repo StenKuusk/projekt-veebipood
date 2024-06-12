@@ -9,7 +9,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  padding: 210px;
+  padding: 180px;
 }
 
 .purchase-section h2 {
@@ -46,4 +46,8 @@
 
 .purchase-section form .submit:hover {
   background-color: #A67B5B;
+}
+
+.purchase-section h3 {
+  margin-bottom: 20px;
 }

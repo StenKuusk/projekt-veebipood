@@ -1,31 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
 import './contacted.css';
 
 const ContactedPage = () => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
-
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-
-        const response = await fetch('/api/contact', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ name, email, message }),
-        });
-
-        if (response.ok) {
-            console.log('Message sent successfully');
-        } else {
-            console.error('Error sending message');
-        }
-    };
-
     return (
         <div>
             <header>
@@ -40,6 +18,9 @@ const ContactedPage = () => {
             <section className="message">
                 <h2>Message sent!</h2>
                 <p>We received your message/feedback and will contact you via email so stay tuned.</p>
+                <form action="/">
+                    <button>Return</button>
+                </form>
             </section>
 
             <footer>
