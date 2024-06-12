@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../App.css';
 import './shop.css';
 
 function ShopPage() {
   const [cart, setCart] = useState([]);
+  const prices = { 'Classic': 9.99, 'Quality': 12.99 };
+  const totalPrice = cart.reduce((total, item) => total + prices[item], 0);
+  const navigate = useNavigate();
 
   const addToCart = (product) => {
     setCart(currentCart => [...currentCart, product]);
@@ -47,16 +50,17 @@ function ShopPage() {
       <section className="cart">
         <h2>Your Cart</h2>
         {cart.map((item, index) => (
-          <div key={index}>
-            <p>{item}</p>
-            <button onClick={() => removeFromCart(item)}>Remove from Cart</button>
+        <div key={index}>
+          <p>{item}</p>
+          <button onClick={() => removeFromCart(item)}>Remove from Cart</button>
           </div>
         ))}
+        <h2>Total Price: ${totalPrice.toFixed(2)}</h2>
       </section>
 
       <footer>
         <p>&copy; 2024 My Coffee Shop. All rights reserved.</p>
-        <Link to="/purchase" className="purchase-button">Proceed to Purchase</Link>
+        <Link to={{ pathname: "/purchase", state: { totalPrice } }} className="purchase-button">Proceed to Purchase</Link>
       </footer>
     </div>
   );
