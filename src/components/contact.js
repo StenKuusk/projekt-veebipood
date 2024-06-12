@@ -7,7 +7,31 @@ function ContactPage() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    navigate('/contacted');
+
+    const name = event.target.elements.name.value;
+    const email = event.target.elements.email.value;
+    const message = event.target.elements.message.value;
+
+    fetch('http://localhost:3000/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name, email, message }),
+    })    
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log('Success:', data);
+      navigate('/contacted');
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
   }
 
   return (

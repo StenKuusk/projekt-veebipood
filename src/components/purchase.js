@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './purchase.css';
+import '../App.css';
 
 function PurchasePage() {
   return (
