@@ -55,7 +55,7 @@ function PurchasePage() {
           <input type="text" id="expiryDate" name="expiryDate" value={formData.expiryDate} onChange={handleChange} required />
           <label htmlFor="cvv">CVV:</label>
           <input type="text" id="cvv" name="cvv" value={formData.cvv} onChange={handleChange} required />
-          <button type="submit">Purchase</button>
+          <button className='submit' type="submit">Purchase</button>
         </form>
       </section>
       <footer>
