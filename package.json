@@ -7,18 +7,20 @@
     "start": "concurrently \"npm run start-client\" \"npm run start-server\"",
     "start-client": "react-scripts start",
     "start-server": "node Express.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:playwright": "playwright test"
   },
   "dependencies": {
     "@playwright/test": "^1.46.1",
+    "@testing-library/user-event": "^14.5.2",
     "axios": "^1.7.2",
     "concurrently": "^8.2.2",
     "cors": "^2.8.5",
     "debug": "^4.3.5",
     "express": "^4.19.2",
     "mysql2": "^3.9.8",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-router-dom": "^6.23.1",
     "react-scripts": "^5.0.1",
     "sequelize": "^6.37.3",
@@ -37,6 +39,14 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "@babel/core": "^7.25.2",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/preset-env": "^7.25.4",
+    "@babel/preset-react": "^7.24.7",
+    "@testing-library/jest-dom": "^6.5.0",
+    "@testing-library/react": "^16.0.1",
+    "babel-jest": "^27.5.1",
+    "jest": "^27.5.1",
+    "jest-environment-jsdom": "^27.5.1"
   }
 }
