@@ -1,4 +1,4 @@
-const { test, expect } = require('@playwright/test');
+import { test, expect } from '@playwright/test';
 
 test('Contact form can be submitted', async ({ page }) => {
     // Avab kontaktilehe
